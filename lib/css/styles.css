@@ -2,7 +2,7 @@ body {
     background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .task1 {
@@ -228,17 +228,26 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    animation: hour-hand 720s linear infinite;
+    animation: hour-hand 3600s linear infinite;
 }
 
 .task5 .minute-hand {
     height: 450px;
-    width: 450px;
-    margin-top: 0px;
+    width: 436px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    animation: minute-hand 60s linear infinite;
+    animation: minute-hand 720s linear infinite;
+}
+.task5 .seconds-hand {
+    height: 450px;
+    width: 460px;
+    margin-top: 0px;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    animation: seconds-hand 60s linear infinite;
 }
 
 .task5 .clock-center {
@@ -258,6 +267,15 @@ body {
     border-top-right-radius: 100%;
     background-color: black;
     box-shadow: 2px 1px 13px 3px rgb(0 0 0 / 20%)
+}
+.task5 .seconds {
+    width: 215px;
+    height: 4px;
+    border: none;
+    border-bottom-right-radius: 100% ;
+    border-top-right-radius: 100%;
+    background-color: #860606;
+    box-shadow: inset 2px 1px 13px 3px rgb(0 0 0 / 20%)
 }
 .task5 .hours {
     width: 164px;
@@ -279,6 +297,14 @@ body {
 }
 
 @keyframes minute-hand {
+    0% {
+        transform: rotate(-90deg);
+    }
+    100% {
+        transform: rotate(270deg);
+    }
+}
+@keyframes seconds-hand {
     0% {
         transform: rotate(-90deg);
     }
